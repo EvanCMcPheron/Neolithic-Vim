@@ -1,10 +1,13 @@
- - Finish LSP stuff
  - snacks / filepicker
+    - look into EVERYTHING it has...
  - tabline and command typing thing
  - buffer management
-   - window management / resize
+    - plugin for buffer deletion
+    - buffer search?
+ - harpoon
  - session saving
  - git integration
  - folding
  - theme switcher, find theme
+ - Finish on mini.nvim
 
