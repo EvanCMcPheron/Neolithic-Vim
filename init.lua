@@ -1,10 +1,10 @@
 require_dir = function(dir)
-	local files = io.popen("ls -- " .. dir):lines()
-	local suffix_len = 4
-	for file in files do
-		local local_module = dir .. '.' .. string.sub(file, 0, string.len(file) - suffix_len) 
-		require(local_module)
-	end
+    local full_path = vim.fn.stdpath("config") .. "/lua/" .. dir:gsub("%.", "/")
+    for name, type in vim.fs.dir(full_path) do
+        if type == "file" and name:match("%.lua$") then
+            require(dir .. "." .. name:sub(1, -5))
+        end
+    end
 end
 
 vim.opt.termguicolors = true
@@ -13,6 +13,6 @@ require('pack_changed_callbacks')
 
 require_dir("plugins")
 
-vim.cmd("source rc.vim")
+vim.cmd("source " .. vim.fn.stdpath("config") .. "/rc.vim")
 
 require("mappings")

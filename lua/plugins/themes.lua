@@ -11,7 +11,10 @@ local confs = {
 	dark = {
 		theme = "miniautumn",
 		statusline = "everforest"
-	}
+	},
+	default = "dark",
+
+	notifies = true
 }
 
 -- Appending the callbacks after because they reference data in conf
@@ -21,7 +24,9 @@ confs.light.callback = function()
 		options = { theme = confs.light.statusline }
 	}
 	vim.cmd { cmd = 'colorscheme', args = { confs.light.theme } }
-	vim.notify()
+	if confs.notifies then
+		vim.notify("Switched to Light Mode")
+	end
 end
 
 confs.dark.callback = function()
@@ -29,12 +34,20 @@ confs.dark.callback = function()
 		options = { theme = confs.dark.statusline }
 	}
 	vim.cmd { cmd = 'colorscheme', args = { confs.dark.theme } }
+	if confs.notifies then
+		vim.notify("Switched to Dark Mode")
+	end
 end
 
+local nf = confs.notifies
+confs.notifies = false -- So on initialization it won't notify, then it will after
+
+confs[confs.default].callback()
+
+confs.notifies = nf
+
 require('darklight').setup({
-	mode = 'custom', -- Sets darklight to custom mode
-
+	mode = 'custom',
 	light_mode_callback = confs.light.callback,
-
 	dark_mode_callback = confs.dark.callback,
 })

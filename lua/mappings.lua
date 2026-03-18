@@ -25,7 +25,7 @@ require('which-key').add {
 	{
 		mode = { "n", "v" },
 		-- Which-Key
-		{ "<leader>?",  function() Snacks.picker.keymaps() end,                                      desc = "Show Bindings" },
+		{ "<leader>?",  function() Snacks.picker.keymaps() end,                                      desc = "Find Bindings" },
 
 		-- LSP bindings
 		{ "<leader>c",  desc = "LSP Mappings" },
