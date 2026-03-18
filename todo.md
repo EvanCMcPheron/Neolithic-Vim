@@ -1,5 +1,6 @@
  - snacks / filepicker
     - look into EVERYTHING it has...
+    - terminals / lazygit
     - todo comments
  - tabline and command typing thing
  - buffer management

@@ -13,10 +13,11 @@ require('which-key').add {
 	{
 		mode = { "i", "t" },
 		{ '<C-BS>', '<C-w>', desc = "Delete word with Ctrl-Backspace" },
+		{ '<C-k>', vim.lsp.buf.signature_help, desc = "Delete word with Ctrl-Backspace" },
 	},
 
 	{
-		mode = { "n" },
+		mode = { "n" }, -- would be terminal mode too, but that bricks the bindings of lazygit
 		{ "]]", function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference" },
 		{ "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
 	},
@@ -24,42 +25,52 @@ require('which-key').add {
 	{
 		mode = { "n", "v" },
 		-- Which-Key
-		{ "<leader>?",  function() Snacks.picker.keymaps() end,                                 desc = "Show Bindings" },
+		{ "<leader>?",  function() Snacks.picker.keymaps() end,                                      desc = "Show Bindings" },
 
 		-- LSP bindings
 		{ "<leader>c",  desc = "LSP Mappings" },
-		{ "<leader>cr", vim.lsp.buf.rename,                                                     desc = "Rename symbol" },
-		{ "<leader>ca", vim.lsp.buf.code_action,                                                desc = "Code action" },
-		{ "<leader>ce", vim.diagnostic.open_float,                                              desc = "Line diagnostics" },
-		{ "<leader>cf", vim.lsp.buf.format,                                                     desc = "Code Format" },
-		{ "gd",         function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
-		{ "gD",         function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
-		{ "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                  desc = "References" },
-		{ "gI",         function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
-		{ "gy",         function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
-		{ "gai",        function() Snacks.picker.lsp_incoming_calls() end,                      desc = "C[a]lls Incoming" },
-		{ "gao",        function() Snacks.picker.lsp_outgoing_calls() end,                      desc = "C[a]lls Outgoing" },
-		{ "K",          vim.lsp.buf.hover,                                                      desc = "Hover" },
-		{ "[d",         vim.diagnostic.goto_prev,                                               desc = "Prev diagnostic" },
-		{ "]d",         vim.diagnostic.goto_next,                                               desc = "Next diagnostic" },
+		{ "<leader>cr", vim.lsp.buf.rename,                                                          desc = "Rename symbol" },
+		{ "<leader>ca", vim.lsp.buf.code_action,                                                     desc = "Code action" },
+		{ "<leader>ce", vim.diagnostic.open_float,                                                   desc = "Line diagnostics" },
+		{ "<leader>cf", vim.lsp.buf.format,                                                          desc = "Code Format" },
+		{ "gd",         function() Snacks.picker.lsp_definitions() end,                              desc = "Goto Definition" },
+		{ "gD",         function() Snacks.picker.lsp_declarations() end,                             desc = "Goto Declaration" },
+		{ "gr",         function() Snacks.picker.lsp_references() end,                               nowait = true,                         desc = "References" },
+		{ "gI",         function() Snacks.picker.lsp_implementations() end,                          desc = "Goto Implementation" },
+		{ "gy",         function() Snacks.picker.lsp_type_definitions() end,                         desc = "Goto T[y]pe Definition" },
+		{ "gai",        function() Snacks.picker.lsp_incoming_calls() end,                           desc = "C[a]lls Incoming" },
+		{ "gao",        function() Snacks.picker.lsp_outgoing_calls() end,                           desc = "C[a]lls Outgoing" },
+		{ "K",          vim.lsp.buf.hover,                                                           desc = "Hover" },
+		{ "[d",         vim.diagnostic.goto_prev,                                                    desc = "Prev diagnostic" },
+		{ "]d",         vim.diagnostic.goto_next,                                                    desc = "Next diagnostic" },
 
 		-- snacks bindings
 		{ "<leader>u",  desc = "Settings" },
-		{ "<leader>/",  function() Snacks.picker.grep(snacks_picker_conf) end,                  desc = "Live Grep" },
-		{ "<leader>:",  function() Snacks.picker.command_history(snacks_picker_conf) end,       desc = "Search Command History" },
+		{ "<leader>/",  function() Snacks.picker.grep(snacks_picker_conf) end,                       desc = "Live Grep" },
+		{ "<leader>:",  function() Snacks.picker.command_history(snacks_picker_conf) end,            desc = "Search Command History" },
 		{ "<leader>f",  desc = "Find" },
-		{ "<leader>ff", function() Snacks.picker.files(snacks_picker_conf) end,                 desc = "Find Files" },
-		{ "<leader>fe", function() Snacks.explorer() end,                                       desc = "File Explorer" },
-		{ "<leader>fb", function() Snacks.picker.buffers(snacks_picker_conf) end,               desc = "Find Buffers" },
-		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-		{ "<leader>fg", function() Snacks.picker.git_log() end,                                 desc = "Find Git Log" },
-		{ "<leader>fh", function() Snacks.picker.help() end,                                    desc = "Find Help Pages" },
-		{ "<leader>fH", function() Snacks.picker.man() end,                                     desc = "Find Man Pages" },
-		{ "<leader>fm", function() Snacks.picker.marks() end,                                   desc = "Find Marks" },
-		{ "<leader>fi", function() Snacks.picker.icons() end,                                   desc = "Find Icons / Emojis" },
-		{ "<leader>fc", function() Snacks.picker.colorschemes() end,                            desc = "Find Colorschemes" },
-		{ "<leader>fr", function() Snacks.picker.registers() end,                               desc = "Find Registers" },
-		{ "<leader>fd", function() Snacks.picker.diagnostics() end,                             desc = "Find Diagnostics" },
+		{ "<leader>ff", function() Snacks.picker.files(snacks_picker_conf) end,                      desc = "Find Files" },
+		{ "<leader>fe", function() Snacks.explorer() end,                                            desc = "File Explorer" },
+		{ "<leader>fb", function() Snacks.picker.buffers(snacks_picker_conf) end,                    desc = "Find Buffers" },
+		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end,      desc = "Find Config File" },
+		{ "<leader>fg", function() Snacks.picker.git_log() end,                                      desc = "Find Git Log" },
+		{ "<leader>fh", function() Snacks.picker.help() end,                                         desc = "Find Help Pages" },
+		{ "<leader>fH", function() Snacks.picker.man() end,                                          desc = "Find Man Pages" },
+		{ "<leader>fm", function() Snacks.picker.marks() end,                                        desc = "Find Marks" },
+		{ "<leader>fi", function() Snacks.picker.icons() end,                                        desc = "Find Icons / Emojis" },
+		{ "<leader>fc", function() Snacks.picker.colorschemes() end,                                 desc = "Find Colorschemes" },
+		{ "<leader>fr", function() Snacks.picker.registers() end,                                    desc = "Find Registers" },
+		{ "<leader>fd", function() Snacks.picker.diagnostics() end,                                  desc = "Find Diagnostics" },
+
+		{ "<leader>d",  desc = "Destruction and the likes" },
+		{ "<leader>dn", function() require("notify").dismiss({ silent = true, pending = true }) end, desc = "Destroy Current Notifications" },
+		{ "<leader>dd", function() Snacks.bufdelete() end, desc = "Destroy Current Buffer" },
+
+		{ "<leader>t",  desc = "Terminal Bindings" },
+		{ "<leader>tg", function() Snacks.lazygit() end, desc = "LazyGit" },
+
+		-- Theme Switching (light / dark)
+		{ "<leader>ub", require("darklight").color_switch, desc = "Switch from Light to Dark Mode" },
 	},
 
 	{
@@ -89,7 +100,6 @@ Snacks.toggle.line_number():map("<leader>ul")
 Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map(
 	"<leader>uc")
 Snacks.toggle.treesitter():map("<leader>uT")
-Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
 Snacks.toggle.inlay_hints():map("<leader>uh")
 Snacks.toggle.indent():map("<leader>ug")
 Snacks.toggle.dim():map("<leader>uD")

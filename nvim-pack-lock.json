@@ -5,9 +5,17 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1.10.1'"
     },
+    "darklight.nvim": {
+      "rev": "5db97e2d132ebdf32c7e5edb5b0c68be9ae43038",
+      "src": "https://github.com/eliseshaffer/darklight.nvim"
+    },
     "lspconfig": {
       "rev": "dc2f86d2b66a6e01a98c37cdadd3be3e90f8ab9a",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "lualine.nvim": {
+      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
