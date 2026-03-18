@@ -1,11 +1,13 @@
  - snacks / filepicker
     - look into EVERYTHING it has...
+    - todo comments
  - tabline and command typing thing
  - buffer management
     - plugin for buffer deletion
     - buffer search?
  - harpoon
  - session saving
+    - Auto sessions
  - git integration
  - folding
  - theme switcher, find theme

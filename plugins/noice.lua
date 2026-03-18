@@ -28,5 +28,26 @@ require("noice").setup {
 				col = "50%",
 			},
 		},
+		confirm = {
+			relative = "editor",
+			position = {
+				row = "45%",
+				col = "50%",
+			},
+		},
+		popup = {
+			relative = "editor",
+			position = {
+				row = "45%",
+				col = "50%",
+			},
+		},
+		popupmenu = {
+			relative = "editor",
+			position = {
+				row = "45%",
+				col = "50%",
+			},
+		},
 	},
 }
