@@ -1,0 +1,9 @@
+-- name is set to 1-mini to make it load before everyone else (for mini.icons)
+vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
+require('mini.basics').setup()
+require('mini.pairs').setup()
+require('mini.keymap').setup()
+MiniIcons = require('mini.icons')
+MiniIcons.setup()
+MiniIcons.mock_nvim_web_devicons()
+
