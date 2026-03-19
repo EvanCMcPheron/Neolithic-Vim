@@ -13,6 +13,10 @@
       "rev": "5db97e2d132ebdf32c7e5edb5b0c68be9ae43038",
       "src": "https://github.com/eliseshaffer/darklight.nvim"
     },
+    "dashboard-nvim": {
+      "rev": "0775e567b6c0be96d01a61795f7b64c1758262f6",
+      "src": "https://github.com/nvimdev/dashboard-nvim"
+    },
     "leap.nvim": {
       "rev": "774c452da3521d4434f912b6ca6dd97318aca4b0",
       "src": "https://codeberg.org/andyg/leap.nvim"

@@ -21,7 +21,6 @@ require('which-key').add {
 		{ "]]", function() Snacks.words.jump(vim.v.count1) end,  desc = "Next Reference" },
 		{ "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
 	},
-	-- TODO eat ass
 	{
 		mode = { "n", "v" },
 		-- Which-Key
