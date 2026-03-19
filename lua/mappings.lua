@@ -12,8 +12,8 @@ require('which-key').add {
 	-- MISC insert mode mappings
 	{
 		mode = { "i", "t" },
-		{ '<C-BS>', '<C-w>', desc = "Delete word with Ctrl-Backspace" },
-		{ '<C-k>', vim.lsp.buf.signature_help, desc = "Delete word with Ctrl-Backspace" },
+		{ '<C-BS>', '<C-w>',                    desc = "Delete word with Ctrl-Backspace" },
+		{ '<C-k>',  vim.lsp.buf.signature_help, desc = "Delete word with Ctrl-Backspace" },
 	},
 
 	{
@@ -35,7 +35,7 @@ require('which-key').add {
 		{ "<leader>cf", vim.lsp.buf.format,                                                          desc = "Code Format" },
 		{ "gd",         function() Snacks.picker.lsp_definitions() end,                              desc = "Goto Definition" },
 		{ "gD",         function() Snacks.picker.lsp_declarations() end,                             desc = "Goto Declaration" },
-		{ "gr",         function() Snacks.picker.lsp_references() end,                               nowait = true,                         desc = "References" },
+		{ "gr",         function() Snacks.picker.lsp_references() end,                               nowait = true,                          desc = "References" },
 		{ "gI",         function() Snacks.picker.lsp_implementations() end,                          desc = "Goto Implementation" },
 		{ "gy",         function() Snacks.picker.lsp_type_definitions() end,                         desc = "Goto T[y]pe Definition" },
 		{ "gai",        function() Snacks.picker.lsp_incoming_calls() end,                           desc = "C[a]lls Incoming" },
@@ -64,32 +64,53 @@ require('which-key').add {
 
 		{ "<leader>d",  desc = "Destruction and the likes" },
 		{ "<leader>dn", function() require("notify").dismiss({ silent = true, pending = true }) end, desc = "Destroy Current Notifications" },
-		{ "<leader>dd", function() Snacks.bufdelete() end, desc = "Destroy Current Buffer" },
-
-		{ "<leader>t",  desc = "Terminal Bindings" },
-		{ "<leader>tg", function() Snacks.lazygit() end, desc = "LazyGit" },
+		{ "<leader>dd", function() Snacks.bufdelete() end,                                           desc = "Destroy Current Buffer" },
 
 		-- Theme Switching (light / dark)
-		{ "<leader>ub", require("darklight").color_switch, desc = "Switch from Light to Dark Mode" },
+		{ "<leader>ub", require("darklight").color_switch,                                           desc = "Switch from Light to Dark Mode" },
+
+		-- Terminal Stuff
+		{ "<leader>t",  desc = "Terminal Bindings" },
+		{ "<leader>tg", function() Snacks.lazygit() end,                                             desc = "LazyGit" },
+		{ "<leader>to", "<cmd>ToggleTerm size=60 direction=vertical<CR>",                            desc = "Toggle Vertical Terminal" },
+		{ "<leader>tO", "<cmd>TermNew size=60 direction=vertical<CR>",                               desc = "New Vertical Terminal" },
+		{ "<leader>tf", "<cmd>ToggleTerm size=60 direction=float<CR>",                               desc = "Toggle Floating Terminal" },
+		{ "<leader>tF", "<cmd>TermNew size=60 direction=float<CR>",                                  desc = "New Floating Terminal" },
+		-- Terminal Focusing
+		{ "<leader>tt", "<cmd>TermSelect<CR>",                                                       desc = "Select Terminal" },
+		-- Sending Selction to Terminal
+		{ "<leader>t1", "<cmd>ToggleTermSendVisualSelection 1<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t2", "<cmd>ToggleTermSendVisualSelection 2<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t3", "<cmd>ToggleTermSendVisualSelection 3<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t4", "<cmd>ToggleTermSendVisualSelection 4<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t5", "<cmd>ToggleTermSendVisualSelection 5<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t6", "<cmd>ToggleTermSendVisualSelection 6<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t7", "<cmd>ToggleTermSendVisualSelection 7<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t8", "<cmd>ToggleTermSendVisualSelection 8<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
+		{ "<leader>t9", "<cmd>ToggleTermSendVisualSelection 9<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
 	},
 
 	{
 		mode = { "i", "t", "n", "v" },
 		{ "<C-o>",   esc_it,                                    desc = "Escape termnal" },
 		-- move windows
-		{ "<C-l>",   esc_it .. "<C-w>l",                        desc = "Move to Right Window" },
-		{ "<C-k>",   esc_it .. "<C-w>k",                        desc = "Move to Upper Window" },
-		{ "<C-j>",   esc_it .. "<C-w>j",                        desc = "Move to Lower Window" },
-		{ "<C-h>",   esc_it .. "<C-w>h",                        desc = "Move to Left Window" },
+		{ "<A-l>",   esc_it .. "<C-w>l",                        desc = "Move to Right Window" },
+		{ "<A-k>",   esc_it .. "<C-w>k",                        desc = "Move to Upper Window" },
+		{ "<A-j>",   esc_it .. "<C-w>j",                        desc = "Move to Lower Window" },
+		{ "<A-h>",   esc_it .. "<C-w>h",                        desc = "Move to Left Window" },
 		-- resize windows
 		{ "<C-A-l>", esc_it .. "<cmd>vertical resize -5<CR>",   desc = "Resize Window" },
 		{ "<C-A-k>", esc_it .. "<cmd>horizontal resize +2<CR>", desc = "Resize Window" },
 		{ "<C-A-j>", esc_it .. "<cmd>horizontal resize -2<CR>", desc = "Resize Window" },
 		{ "<C-A-h>", esc_it .. "<cmd>vertical resize +5<CR>",   desc = "Resize Window" },
 		-- buffer navigation
-		{ "<C-A-o>", esc_it .. "<cmd>bnext<CR>",                desc = "Next Buffer" },
-		{ "<C-A-i>", esc_it .. "<cmd>bprev<CR>",                desc = "Previous Buffer" },
+		{ "<A-o>",   esc_it .. "<cmd>bnext<CR>",                desc = "Next Buffer" },
+		{ "<A-i>",   esc_it .. "<cmd>bprev<CR>",                desc = "Previous Buffer" },
 	},
+	{
+		mode = { "n", "x", "o" },
+		{ "s", "<Plug>(leap)", desc = "Leap Around Buffer" },
+	}
 }
 
 Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")

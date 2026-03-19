@@ -1,16 +1,18 @@
 vim.pack.add {
 	"https://github.com/nvim-lualine/lualine.nvim",
-	"https://github.com/eliseshaffer/darklight.nvim"
+	"https://github.com/eliseshaffer/darklight.nvim",
+	"https://github.com/savq/melange-nvim",
+	"https://github.com/EdenEast/nightfox.nvim",
 }
 
 local confs = {
 	light = {
-		theme = "miniautumn",
-		statusline = "solarized_light",
+		theme = "dayfox",
+		statusline = "auto", -- ironically I found that auto was better than finding my own manually
 	},
 	dark = {
-		theme = "miniautumn",
-		statusline = "everforest"
+		theme = "nightfox",
+		statusline = "auto"
 	},
 	default = "dark",
 
@@ -38,6 +40,7 @@ confs.dark.callback = function()
 		vim.notify("Switched to Dark Mode")
 	end
 end
+
 
 local nf = confs.notifies
 confs.notifies = false -- So on initialization it won't notify, then it will after
