@@ -1,9 +1,5 @@
- - snacks / filepicker
-    - terminals / lazygit
-    - todo comments
  - buffer management
-    - plugin for buffer deletion
-    - buffer search?
+    - better window resize
  - harpoon
  - session saving
     - Auto sessions
