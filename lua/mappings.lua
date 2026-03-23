@@ -78,10 +78,10 @@ require('which-key').add {
 		-- Terminal Stuff
 		{ "<leader>t",  desc = "Terminal Bindings" },
 		{ "<leader>tg", function() Snacks.lazygit() end,                                             desc = "LazyGit" },
-		{ "<leader>to", "<cmd>ToggleTerm size=60 direction=vertical<CR>",                            desc = "Toggle Vertical Terminal" },
-		{ "<leader>tO", "<cmd>TermNew size=60 direction=vertical<CR>",                               desc = "New Vertical Terminal" },
-		{ "<leader>tf", "<cmd>ToggleTerm size=60 direction=float<CR>",                               desc = "Toggle Floating Terminal" },
-		{ "<leader>tF", "<cmd>TermNew size=60 direction=float<CR>",                                  desc = "New Floating Terminal" },
+		{ "<leader>to", "<cmd>ToggleTerm size=80 direction=vertical<CR>",                            desc = "Toggle Vertical Terminal" },
+		{ "<leader>tO", "<cmd>TermNew size=80 direction=vertical<CR>",                               desc = "New Vertical Terminal" },
+		{ "<leader>tf", "<cmd>ToggleTerm size=80 direction=float<CR>",                               desc = "Toggle Floating Terminal" },
+		{ "<leader>tF", "<cmd>TermNew size=80 direction=float<CR>",                                  desc = "New Floating Terminal" },
 		-- Terminal Focusing
 		{ "<leader>tt", "<cmd>TermSelect<CR>",                                                       desc = "Select Terminal" },
 		-- Sending Selction to Terminal
