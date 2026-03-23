@@ -1,7 +1,11 @@
 {
   "plugins": {
+    "auto-session": {
+      "rev": "62437532b38495551410b3f377bcf4aaac574ebe",
+      "src": "https://github.com/rmagatti/auto-session"
+    },
     "blink.cmp": {
-      "rev": "022521a8910a5543b0251b21c9e1a1e989745796",
+      "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1.10.1'"
     },
@@ -40,6 +44,10 @@
     "mini.nvim": {
       "rev": "9990c41f10f54f29a888d13024c9f765037bde23",
       "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "neural-open.nvim": {
+      "rev": "36c2826e9e8a955dd75b916d2953dad55a386270",
+      "src": "https://github.com/dtormoen/neural-open.nvim"
     },
     "nightfox.nvim": {
       "rev": "ba47d4b4c5ec308718641ba7402c143836f35aa9",

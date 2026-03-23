@@ -87,7 +87,7 @@ require("dashboard").setup {
 				icon_hl = '@variable',
 				desc = 'All Sessions',
 				group = 'Label',
-				action = 'SessionManager load_session',
+				action = 'AutoSession Search',
 				key = 'a',
 			},
 			{
@@ -95,7 +95,7 @@ require("dashboard").setup {
 				icon_hl = '@variable',
 				desc = 'Load Session',
 				group = 'Label',
-				action = 'SessionManager load_current_dir_session',
+				action = 'AutoSession restore',
 				key = 's',
 			},
 			-- {
