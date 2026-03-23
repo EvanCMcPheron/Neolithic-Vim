@@ -1,4 +1,4 @@
-vim.pack.add{"https://github.com/nvimdev/dashboard-nvim"}
+vim.pack.add { "https://github.com/nvimdev/dashboard-nvim" }
 
 local choose = function()
 	math.randomseed(os.time())
@@ -38,6 +38,14 @@ end
 local stupid_nvim = {
 	'',
 	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
+	'',
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣔⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠁⠙⢶⣯⣭⣛⣯⡵⣾⣿⡧⣴⣂⣤⡀⡀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣣⡝⠁⠀⠀⠈⠙⠛⠻⢮⣥⣭⣆⣭⣮⣽⣛⠻⣷⡶⢿⣿⣤⣦⣖⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
@@ -59,15 +67,13 @@ local stupid_nvim = {
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠓⠤⠄⣀⡀⠈⣹⢶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠒⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 	'',
-[[ .-._           ,----.     _,.---._               .=-.-.,--.--------. ,--.-,,-,--, .=-.-.  _,.----.         ,-.-. .=-.-.       ___   ]],
-[[/==/ \  .-._ ,-.--` , \  ,-.' , -  `.    _.-.    /==/_ /==/,  -   , -Y==/  /|=|  |/==/_ /.' .' -   \ ,--.-./=/ ,//==/_ /.-._ .'=.'\  ]],
-[[|==|, \/ /, /==|-  _.-` /==/_,  ,  - \ .-,.'|   |==|, |\==\.-.  - ,-./==|_ ||=|, |==|, |/==/  ,  ,-'/==/, ||=| -|==|, |/==/ \|==|  | ]],
-[[|==|-  \|  ||==|   `.-.|==|   .=.     |==|, |   |==|  | `--`\==\- \  |==| ,|/=| _|==|  ||==|-   |  .\==\,  \ / ,|==|  ||==|,|  / - | ]],
-[[|==| ,  | -/==/_ ,    /|==|_ : ;=:  - |==|- |   |==|- |      \==\_ \ |==|- `-' _ |==|- ||==|_   `-' \\==\ - ' - /==|- ||==|  \/  , | ]],
-[[|==| -   _ |==|    .-' |==| , '='     |==|, |   |==| ,|      |==|- | |==|  _     |==| ,||==|   _  , | \==\ ,   ||==| ,||==|- ,   _ | ]],
-[[|==|  /\ , |==|_  ,`-._ \==\ -    ,_ /|==|- `-._|==|- |      |==|, | |==|   .-. ,\==|- |\==\.       / |==| -  ,/|==|- ||==| _ /\   | ]],
-[[/==/, | |- /==/ ,     /  '.='. -   .' /==/ - , ,/==/. /      /==/ -/ /==/, //=/  /==/. / `-.`.___.-'  \==\  _ / /==/. //==/  / / , / ]],
-[[`--`./  `--`--`-----``     `--`--''   `--`-----'`--`-`       `--`--` `--`-' `-`--`--`-`                `--`--'  `--`-` `--`./  `--`  ]],
+[[░███    ░██                       ░██ ░██   ░██    ░██        ░██                   ░██    ░██ ░██                ]],
+[[░████   ░██                       ░██       ░██    ░██                              ░██    ░██                    ]],
+[[░██░██  ░██  ░███████   ░███████  ░██ ░██░████████ ░████████  ░██ ░███████          ░██    ░██ ░██░█████████████  ]],
+[[░██ ░██ ░██ ░██    ░██ ░██    ░██ ░██ ░██   ░██    ░██    ░██ ░██░██    ░██ ░██████ ░██    ░██ ░██░██   ░██   ░██ ]],
+[[░██  ░██░██ ░█████████ ░██    ░██ ░██ ░██   ░██    ░██    ░██ ░██░██                 ░██  ░██  ░██░██   ░██   ░██ ]],
+[[░██   ░████ ░██        ░██    ░██ ░██ ░██   ░██    ░██    ░██ ░██░██    ░██           ░██░██   ░██░██   ░██   ░██ ]],
+[[░██    ░███  ░███████   ░███████  ░██ ░██    ░████ ░██    ░██ ░██ ░███████             ░███    ░██░██   ░██   ░██ ]],
 	'',
 	'',
 	choose(),
@@ -87,7 +93,7 @@ require("dashboard").setup {
 				icon_hl = '@variable',
 				desc = 'All Sessions',
 				group = 'Label',
-				action = 'AutoSession Search',
+				action = 'AutoSession search',
 				key = 'a',
 			},
 			{
@@ -114,119 +120,118 @@ require("dashboard").setup {
 			--   action = 'require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())',
 			--   key = 'h',
 			-- },
-			{
-				icon = '󱁽 ',
-				icon_hl = '@variable',
-				desc = 'Open File Browser',
-				group = 'label',
-				action = 'Telescope file_browser',
-				key = 'b',
-			},
-			{
-				icon = ' ',
-				icon_hl = '@variable',
-				desc = 'Open Terminal',
-				group = 'label',
-				action = function()
-					require("terminal.mappings").run(nil, { layout = { open_cmd = "enew" } })()
-				end,
-				key = 't',
-			},
-			{
-				icon = '󰇈 ',
-				icon_hl = '@variable',
-				desc = 'Obsidian',
-				group = 'label',
-				action = function()
-					-- load obsidian integration
-					vim.cmd('Lazy load obsidian.nvim')
-
-					local pickers = require("telescope.pickers")
-					local finders = require("telescope.finders")
-					local actions = require "telescope.actions"
-					local action_state = require "telescope.actions.state"
-
-					-- Load workspaces outlined in nvim config
-					local workspaces = {}
-					for i, v in ipairs(require 'obsidian_worspaces') do
-						workspaces[i] = v.name
-					end
-
-					-- use telescope picker to select workspace
-					pickers
-						.new({}, {
-							finder = finders.new_table({
-								results = workspaces,
-							}),
-							attach_mappings = function(prompt_bufnr, _)
-								actions.select_default:replace(function()
-									actions.close(prompt_bufnr)
-									local selection = action_state.get_selected_entry()
-									-- print(selection[1])
-									local ws = require 'obsidian_worspaces'
-									local fp = ''
-									for i, w in ipairs(ws) do
-										if w.name == selection[1] then
-											fp = w.path
-											break
-										end
-									end
-									if fp == '' then
-										vim.notify("Bad obsidian filepath (empty path string found)", "error")
-										return true
-									end
-
-									vim.cmd('cd ' .. fp)
-									vim.cmd('enew')
-								end)
-								return true
-							end,
-						})
-						:find()
-				end,
-				key = 'o',
-			},
-			{
-				icon = ' ',
-				icon_hl = '@variable',
-				desc = 'Godot',
-				group = 'label',
-				action = function()
-					-- set the godot external editor pipe depending on system
-					local addr = './godot.pipe'
-					if vim.fn.has('win32') then
-						addr = '127.0.0.1:6004'
-					end
-					-- Start the godot server connection
-					vim.fn.serverstart(addr)
-					-- Create a new buffer so it doesnt look like nothing changed
-					vim.cmd 'enew | r ! echo "Connected to Godot, open a script in Godot..."'
-				end,
-				key = 'g',
-			},
+			-- {
+			-- 	icon = '󱁽 ',
+			-- 	icon_hl = '@variable',
+			-- 	desc = 'Open File Browser',
+			-- 	group = 'label',
+			-- 	action = 'NeuralOpen',
+			-- 	key = 'b',
+			-- },
+			-- {
+			-- 	icon = ' ',
+			-- 	icon_hl = '@variable',
+			-- 	desc = 'Open Terminal',
+			-- 	group = 'label',
+			-- 	action = function()
+			-- 		require("terminal.mappings").run(nil, { layout = { open_cmd = "enew" } })()
+			-- 	end,
+			-- 	key = 't',
+			-- },
+			-- {
+			-- 	icon = '󰇈 ',
+			-- 	icon_hl = '@variable',
+			-- 	desc = 'Obsidian',
+			-- 	group = 'label',
+			-- 	action = function()
+			-- 		-- load obsidian integration
+			-- 		vim.cmd('Lazy load obsidian.nvim')
+			--
+			-- 		local pickers = require("telescope.pickers")
+			-- 		local finders = require("telescope.finders")
+			-- 		local actions = require "telescope.actions"
+			-- 		local action_state = require "telescope.actions.state"
+			--
+			-- 		-- Load workspaces outlined in nvim config
+			-- 		local workspaces = {}
+			-- 		for i, v in ipairs(require 'obsidian_worspaces') do
+			-- 			workspaces[i] = v.name
+			-- 		end
+			--
+			-- 		-- use telescope picker to select workspace
+			-- 		pickers
+			-- 			.new({}, {
+			-- 				finder = finders.new_table({
+			-- 					results = workspaces,
+			-- 				}),
+			-- 				attach_mappings = function(prompt_bufnr, _)
+			-- 					actions.select_default:replace(function()
+			-- 						actions.close(prompt_bufnr)
+			-- 						local selection = action_state.get_selected_entry()
+			-- 						-- print(selection[1])
+			-- 						local ws = require 'obsidian_worspaces'
+			-- 						local fp = ''
+			-- 						for i, w in ipairs(ws) do
+			-- 							if w.name == selection[1] then
+			-- 								fp = w.path
+			-- 								break
+			-- 							end
+			-- 						end
+			-- 						if fp == '' then
+			-- 							vim.notify("Bad obsidian filepath (empty path string found)", "error")
+			-- 							return true
+			-- 						end
+			--
+			-- 						vim.cmd('cd ' .. fp)
+			-- 						vim.cmd('enew')
+			-- 					end)
+			-- 					return true
+			-- 				end,
+			-- 			})
+			-- 			:find()
+			-- 	end,
+			-- 	key = 'o',
+			-- },
+			-- {
+			-- 	icon = ' ',
+			-- 	icon_hl = '@variable',
+			-- 	desc = 'Godot',
+			-- 	group = 'label',
+			-- 	action = function()
+			-- 		-- set the godot external editor pipe depending on system
+			-- 		local addr = './godot.pipe'
+			-- 		if vim.fn.has('win32') then
+			-- 			addr = '127.0.0.1:6004'
+			-- 		end
+			-- 		-- Start the godot server connection
+			-- 		vim.fn.serverstart(addr)
+			-- 		-- Create a new buffer so it doesnt look like nothing changed
+			-- 		vim.cmd 'enew | r ! echo "Connected to Godot, open a script in Godot..."'
+			-- 	end,
+			-- 	key = 'g',
+			-- },
 			-- Setup godot server listening when open on a godot project
-			{
-				icon = '󰊪 ',
-				icon_hl = '@variable',
-				desc = 'Leet',
-				group = 'label',
-				action = 'Leet',
-				key = 'l',
-			},
-			{
-				desc = '󰊳 Update',
-				group = '@property',
-				action = 'Lazy update',
-				key = 'u'
-			},
+			-- {
+			-- 	icon = '󰊪 ',
+			-- 	icon_hl = '@variable',
+			-- 	desc = 'Leet',
+			-- 	group = 'label',
+			-- 	action = 'Leet',
+			-- 	key = 'l',
+			-- },
+			-- {
+			-- 	desc = '󰊳 Update',
+			-- 	group = '@property',
+			-- 	action = 'Lazy update',
+			-- 	key = 'u'
+			-- },
 			{
 				icon = ' ',
 				desc = 'Config',
 				group = 'Label',
 				action = function()
 					vim.cmd("cd " .. vim.fn.stdpath("config"))
-					vim.cmd("e lua/plugins.lua")
-					vim.cmd("SessionManager load_current_dir_session")
+					vim.cmd("AutoSession restore")
 				end,
 				key = 'c',
 			},
