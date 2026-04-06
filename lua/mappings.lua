@@ -88,6 +88,8 @@ require('which-key').add {
 		-- Terminal Focusing
 		{ "<leader>tt", "<cmd>TermSelect<CR>",                                                       desc = "Select Terminal" },
 		-- Sending Selction to Terminal
+		{ "<A-x>",      "<cmd>ToggleTerm size=80 direction=float<CR>",                               desc = "Toggle Floating Terminal",      mode = { "i", "t", "n" } },
+		{ "<A-x>",      "<cmd>ToggleTermSendVisualSelection 1<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
 		{ "<leader>t1", "<cmd>ToggleTermSendVisualSelection 1<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
 		{ "<leader>t2", "<cmd>ToggleTermSendVisualSelection 2<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
 		{ "<leader>t3", "<cmd>ToggleTermSendVisualSelection 3<CR>",                                  desc = "Send Selection to Terminal",    mode = { "v" } },
