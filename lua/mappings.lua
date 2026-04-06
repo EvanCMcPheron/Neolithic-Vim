@@ -49,8 +49,7 @@ require('which-key').add {
 		{ "<leader>/",  function() Snacks.picker.grep(snacks_picker_conf) end,                  desc = "Live Grep" },
 		{ "<leader>:",  function() Snacks.picker.command_history(snacks_picker_conf) end,       desc = "Search Command History" },
 
-		{ "<leader>g", desc = "Git" },
-		{"<leader>gb", Snacks.git.blame_line, desc = "Git Blame Line"},
+		{ "<leader>g",  desc = "Git" },
 
 		{ "<leader>f",  desc = "Find" },
 		-- { "<leader>ff", function() Snacks.picker.files(require("confs.snacks").picker.files) end, desc = "Find Files" },
