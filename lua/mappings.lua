@@ -123,7 +123,8 @@ require('which-key').add {
 	},
 	{
 		mode = { "n", "x", "o" },
-		{ "s", "<Plug>(leap)", desc = "Leap Around Buffer" },
+		{ "s", require('flash').remote,     desc = "Leap" },
+		{ "S", require('flash').treesitter, desc = "Select Treesitter" },
 	}
 }
 
