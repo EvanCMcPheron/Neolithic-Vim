@@ -48,3 +48,9 @@ require('mini.surround').setup {
   -- idle time if user input is required.
   silent = false,
 }
+
+require('mini.splitjoin').setup {
+	mappings = {
+		toggle = '<leader>cj',
+	}
+}

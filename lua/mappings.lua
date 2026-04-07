@@ -33,6 +33,7 @@ require('which-key').add {
 		{ "<leader>ca", vim.lsp.buf.code_action,                                                desc = "Code action" },
 		{ "<leader>ce", vim.diagnostic.open_float,                                              desc = "Line diagnostics" },
 		{ "<leader>cf", vim.lsp.buf.format,                                                     desc = "Code Format" },
+		{ "<leader>cj", desc = "Toggle Splitjoin" }, -- edit in mini.lua
 		{ "gd",         function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
 		{ "gD",         function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
 		{ "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                  desc = "References" },
