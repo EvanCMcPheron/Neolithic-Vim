@@ -1,7 +1,6 @@
-
-local default_scale = 0.5788
+DefaultScale = 0.5788
 if vim.loop.os_uname().sysname == 'Linux' then
-	default_scale = 0.8
+	DefaultScale = 0.7256
 end
 
 if vim.g.neovide then
@@ -15,7 +14,7 @@ if vim.g.neovide then
 	vim.keymap.set('v', '<C-S-c>', '"+y')           -- Copy
 	vim.keymap.set('i', '<C-S-v>', '<C-r>+')     -- Paste visual mode
 	vim.keymap.set('t', '<C-S-v>', '<C-\\><C-n>"+pa') -- Paste insert mode
-	vim.g.neovide_scale_factor = default_scale
+	vim.g.neovide_scale_factor = DefaultScale
 	local change_scale_factor = function(delta)
 		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
 	end
@@ -26,7 +25,7 @@ if vim.g.neovide then
 		change_scale_factor(1 / 1.05)
 	end)
 	vim.keymap.set("n", "<C-0>", function()
-		vim.g.neovide_scale_factor = default_scale
+		vim.g.neovide_scale_factor = DefaultScale
 	end)
 end
 
