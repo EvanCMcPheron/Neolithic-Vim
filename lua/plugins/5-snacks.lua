@@ -92,7 +92,12 @@ require("neural-open").setup {
   },
 
   -- File sources for the default file picker
-  file_sources = { "buffers", "neural_recent", "files", "git_files" },
+  file_sources = {
+  	"buffers",
+  	-- "neural_recent", THIS INCLUDES FILES NOT IN CWD
+  	"files",
+  	"git_files"
+  },
 
   -- Algorithm config for item pickers (8-feature pipeline, separate from file pickers)
   item_algorithm_config = {
