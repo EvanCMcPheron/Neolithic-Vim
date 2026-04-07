@@ -44,6 +44,15 @@ require('which-key').add {
 		{ "[d",         vim.diagnostic.goto_prev,                                               desc = "Prev diagnostic" },
 		{ "]d",         vim.diagnostic.goto_next,                                               desc = "Next diagnostic" },
 
+		-- Surround (edit actual bindings in mini.lua)
+		{ '<leader>s',  desc = 'Surround Commands' },
+		{ '<leader>sa', desc = 'Surround add' },
+		{ '<leader>sd', desc = 'Surround delete' },
+		{ '<leader>sf', desc = 'Surround find' },
+		{ '<leader>sF', desc = 'Surround find_left' },
+		{ '<leader>sh', desc = 'Surround highlight' },
+		{ '<leader>sr', desc = 'Surround replace' },
+
 		-- snacks bindings
 		{ "<leader>u",  desc = "Settings" },
 		{ "<leader>/",  function() Snacks.picker.grep(snacks_picker_conf) end,                  desc = "Live Grep" },
