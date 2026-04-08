@@ -45,6 +45,15 @@ require('which-key').add {
 		{ "[d",         vim.diagnostic.goto_prev,                                               desc = "Prev diagnostic" },
 		{ "]d",         vim.diagnostic.goto_next,                                               desc = "Next diagnostic" },
 
+		-- Harpoon (2)
+		{ "<leader>h", desc = "Harpoon" },
+		{"<leader>hl", function() Harpoon.ui:toggle_quick_menu(Harpoon:list()) end, desc = "Toggle Menu"},
+		{"<leader>hm", function() Harpoon:list():add() end, desc = "Mark buffer"},
+		{"<leader>hn", function() Harpoon:list():select(1) end, desc = "Select Harpoon Buffer 1"},
+		{"<leader>hh", function() Harpoon:list():select(2) end, desc = "Select Harpoon Buffer 2"},
+		{"<leader>ht", function() Harpoon:list():select(3) end, desc = "Select Harpoon Buffer 3"},
+		{"<leader>hs", function() Harpoon:list():select(4) end, desc = "Select Harpoon Buffer 4"},
+
 		-- Surround (edit actual bindings in mini.lua)
 		{ '<leader>s',  desc = 'Surround Commands' },
 		{ '<leader>sa', desc = 'Surround add' },
