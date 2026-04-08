@@ -29,6 +29,11 @@
       "rev": "50c205548d8b037b7ff6378fca6d21146f0b6161",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "harpoon": {
+      "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
+    },
     "leap.nvim": {
       "rev": "774c452da3521d4434f912b6ca6dd97318aca4b0",
       "src": "https://codeberg.org/andyg/leap.nvim"

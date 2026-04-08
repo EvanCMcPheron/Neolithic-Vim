@@ -1,6 +1,6 @@
 DefaultScale = 0.5788
 if vim.loop.os_uname().sysname == 'Linux' then
-	DefaultScale = 0.7256
+	DefaultScale = 0.8819
 end
 
 if vim.g.neovide then
