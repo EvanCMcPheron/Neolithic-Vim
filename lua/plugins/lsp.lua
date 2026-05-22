@@ -1,25 +1,39 @@
 local lsps = {
 	{
-		'lua_ls',
+		'yamlls',
 		{
-			filetypes = {'lua'}
+			settings = {
+				yaml = {
+					schemas = {
+						["https://json.schemastore.org/github-workflow.json"] = ".github/workflows/*.yml",
+					},
+				},
+			},
+
 		}
 	},
 	{
-		'harper-ls', 
+		'lua_ls',
+		{
+			filetypes = { 'lua' }
+		}
+	},
+	{
+		'harper-ls',
 		{
 			linters = {
 				SentanceCapitalization = false
 			}
 		}
 	},
-	{'clangd'},
-	{'rust-analyzer'}
+	{ 'clangd' },
+	{ 'rust-analyzer' }
 }
 
 vim.pack.add({
 	'https://github.com/mason-org/mason.nvim',
 	'https://github.com/neovim/nvim-lspconfig',
+	'https://github.com/mfussenegger/nvim-lint.git',
 	{
 		src = 'https://github.com/saghen/blink.cmp',
 		version = 'v1.10.1'
@@ -45,13 +59,13 @@ require('blink.cmp').setup {
 	-- See :h blink-cmp-config-keymap for defining your own keymap
 	keymap = {
 		preset = 'default',
-		['<C-Space>'] = {'accept'},
+		['<C-Space>'] = { 'accept' },
 	},
 
 	appearance = {
-	  -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-	  -- Adjusts spacing to ensure icons are aligned
-	  nerd_font_variant = 'mono'
+		-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+		-- Adjusts spacing to ensure icons are aligned
+		nerd_font_variant = 'mono'
 	},
 
 	-- (Default) Only show the documentation popup when manually triggered
@@ -60,14 +74,14 @@ require('blink.cmp').setup {
 		list = { selection = { preselect = true } },
 		ghost_text = { enabled = true, show_with_menu = true },
 
-		menu = { draw = { treesitter = {'lsp'} }, auto_show = true, border = border_style },
+		menu = { draw = { treesitter = { 'lsp' } }, auto_show = true, border = border_style },
 		documentation = { auto_show = true, auto_show_delay_ms = 0, window = { border = border_style } },
 	},
 
 	-- Default list of enabled providers defined so that you can extend it
 	-- elsewhere in your config, without redefining it, due to `opts_extend`
 	sources = {
-	  default = { 'lsp', 'path', 'buffer' },
+		default = { 'lsp', 'path', 'buffer' },
 	},
 
 	-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -85,8 +99,8 @@ require('blink.cmp').setup {
 	term = { enabled = false }
 }
 
--- Make the root of projects 
-vim.lsp.config('*', { root_markers = {'.git'} })
+-- Make the root of projects
+vim.lsp.config('*', { root_markers = { '.git' } })
 
 for _, lsp in pairs(lsps) do
 	local name, config = lsp[1], lsp[2]
@@ -100,3 +114,14 @@ for _, lsp in pairs(lsps) do
 
 	vim.lsp.config(name, config)
 end
+
+-- with nvim-lint
+require('lint').linters_by_ft = {
+	yaml = { 'yamllint' },
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	callback = function()
+		require("lint").try_lint()
+	end,
+})

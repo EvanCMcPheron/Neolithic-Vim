@@ -74,6 +74,10 @@
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim-lint": {
+      "rev": "d48f3a76189d03b2239f6df1b2f7e3fa8353743b",
+      "src": "https://github.com/mfussenegger/nvim-lint.git"
+    },
     "nvim-lspconfig": {
       "rev": "dc2f86d2b66a6e01a98c37cdadd3be3e90f8ab9a",
       "src": "https://github.com/neovim/nvim-lspconfig"
