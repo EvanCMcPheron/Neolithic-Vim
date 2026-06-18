@@ -87,7 +87,7 @@ require('which-key').add {
 		{ "<leader>fe", function() Snacks.explorer() end,                                       desc = "File Explorer" },
 		{ "<leader>fb", function() Snacks.picker.buffers(snacks_picker_conf) end,               desc = "Find Buffers" },
 		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-		{ "<leader>fg", function() Snacks.picker.git_log() end,                                 desc = "Find Git Log" },
+		{ "<leader>fg", function() Snacks.picker.git_diff() end,                                 desc = "Find Git Log" },
 		{ "<leader>fh", function() Snacks.picker.help() end,                                    desc = "Find Help Pages" },
 		{ "<leader>fH", function() Snacks.picker.man() end,                                     desc = "Find Man Pages" },
 		{ "<leader>fm", function() Snacks.picker.marks() end,                                   desc = "Find Marks" },
