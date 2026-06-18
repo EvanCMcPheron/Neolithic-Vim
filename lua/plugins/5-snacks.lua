@@ -9,7 +9,14 @@ require('snacks').setup {
 	explorer = { enabled = true },
 	indent = { enabled = true },
 	input = { enabled = false },
-	picker = { enabled = true },
+	picker = {
+		enabled = true,
+		win = {
+			preview = {
+				wo = { foldenable = false },
+			},
+		},
+	},
 	notifier = { enabled = false },
 	quickfile = { enabled = true },
 	scope = { enabled = true },
