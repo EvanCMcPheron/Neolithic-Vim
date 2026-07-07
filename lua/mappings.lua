@@ -3,6 +3,10 @@ local km = require('mini.keymap')
 local map_multistep = km.map_multistep
 local map_combo = km.map_combo
 
+local terminal_vertical_size = 110
+local terminal_horizontal_size = 30
+local terminal_float_size = 100
+
 local esc_it = "<C-\\><C-n>" -- This escapes both terminal and insert mode, so it should be used instead of <Esc>
 
 local snacks_picker_conf = require("snacks-picker-conf")
@@ -111,12 +115,12 @@ require('which-key').add {
 		-- Terminal Stuff
 		{ "<leader>t",  desc = "Terminal Bindings" },
 		{ "<leader>tg", function() Snacks.lazygit() end,                                             desc = "LazyGit" },
-		{ "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<CR>",                            desc = "Toggle Vertical Terminal" },
-		{ "<leader>tV", "<cmd>TermNew size=80 direction=vertical<CR>",                               desc = "New Vertical Terminal" },
-		{ "<leader>tf", "<cmd>ToggleTerm size=80 direction=float<CR>",                               desc = "Toggle Floating Terminal" },
-		{ "<leader>tF", "<cmd>TermNew size=80 direction=float<CR>",                                  desc = "New Floating Terminal" },
-		{ "<leader>th", "<cmd>ToggleTerm size=25 direction=horizontal<CR>",                          desc = "Toggle Floating Terminal" },
-		{ "<leader>tH", "<cmd>TermNew size=25 direction=horizontal<CR>",                             desc = "New Floating Terminal" },
+		{ "<leader>tv", "<cmd>ToggleTerm size=".. terminal_vertical_size .." direction=vertical<CR>",  desc = "Toggle Vertical Terminal" },
+		{ "<leader>tV", "<cmd>TermNew size=".. terminal_vertical_size .." direction=vertical<CR>",     desc = "New Vertical Terminal" },
+		{ "<leader>tf", "<cmd>ToggleTerm size=".. terminal_float_size .." direction=float<CR>",        desc = "Toggle Floating Terminal" },
+		{ "<leader>tF", "<cmd>TermNew size=".. terminal_float_size .." direction=float<CR>",           desc = "New Floating Terminal" },
+		{ "<leader>th", "<cmd>ToggleTerm size=".. terminal_horizontal_size .." direction=horizontal<CR>",desc = "Toggle Floating Terminal" },
+		{ "<leader>tH", "<cmd>TermNew size=".. terminal_horizontal_size .." direction=horizontal<CR>", desc = "New Floating Terminal" },
 		{ "<leader>tw", "<cmd>ToggleTerm direction=tab<CR>",                                         desc = "Toggle Floating Terminal" },
 		{ "<leader>tW", "<cmd>TermNew direction=tab<CR>",                                            desc = "New Floating Terminal" },
 		-- Terminal Focusing
